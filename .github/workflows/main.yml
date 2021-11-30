@@ -18,3 +18,4 @@ jobs:
         with:
           node-version: 16.13.0
       - run: npm install
+        working-directory: ./cobra-app-workspace
