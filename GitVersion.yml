@@ -1,0 +1,14 @@
+mode: Mainline
+next-version: 12.0.0
+branches:
+  develop:
+    mode: ContinuousDeployment
+    tag: next
+  master: {}
+  feature:
+    mode: ContinuousDeployment
+    tag: preview
+
+ignore:
+  sha: []
+merge-message-formats: {}
