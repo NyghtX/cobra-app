@@ -1,0 +1,4 @@
+{
+  "include": ["projects/cobra-app/src/**/*.ts"],
+  "exclude": ["projects/cobra-app/src/test.ts", "projects/cobra-app/src/**/*.spec.ts"]
+}
