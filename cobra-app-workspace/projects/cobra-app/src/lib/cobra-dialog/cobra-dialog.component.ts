@@ -4,7 +4,7 @@ import {InternalCobraDialogConfig} from './internalCobraDialogConfig';
 import {CobraDialogContentDirective} from './cobra-dialog-content.directive';
 import {CobraComponent} from "../cobra-component/cobra-component";
 import {CobraComponentMode} from "../cobra-component/cobraComponentMode";
-import {CobraComponentComponent} from "../cobra-component/cobra-component.component";
+import {CobraComponentDefinition} from "../cobra-component/cobra-component-definition";
 
 @Component({
   selector: 'cobra-dialog',
@@ -19,10 +19,9 @@ export class CobraDialogComponent implements AfterViewInit {
   @ViewChild(CobraDialogContentDirective, {static: false}) cobraDialogContent?: CobraDialogContentDirective;
 
   /**
-   * CobraComponent, that will be displayed as dialog
+   * Definition of the generated CobraComponent
    */
-  @ViewChild(CobraComponentComponent) cobraComponent?: CobraComponentComponent;
-
+  componentDefinition?: CobraComponentDefinition
 
 
   /**
@@ -43,7 +42,7 @@ export class CobraDialogComponent implements AfterViewInit {
       const componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.config.component);
       this.componentRef = this.cobraDialogContent!.viewContainerRef.createComponent<CobraComponent>(componentFactory);
       this.componentRef.instance.mode = CobraComponentMode.Dialog;
-      this.cobraComponent!.instance = this.componentRef.instance;
+      this.componentDefinition = (this.componentRef.instance as any).cobraComponent;
     });
   }
 

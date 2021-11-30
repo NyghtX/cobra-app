@@ -3,7 +3,7 @@ import {ComponentType} from '@angular/cdk/portal';
 import {MatDialog} from '@angular/material/dialog';
 import {CobraDialogComponent} from './cobra-dialog.component';
 import {CobraDialogConfig} from './cobraDialogConfig';
-import {CobraComponentBase} from "../cobra-component/cobra-component-base";
+import {CobraComponent} from "../cobra-component/cobra-component";
 
 /**
  * Service, über den ein CobraDialog geöffnet werden kann.
@@ -18,16 +18,7 @@ export class CobraDialogService {
   ) {
   }
 
-  async open<T extends CobraComponentBase>(component: ComponentType<T>, config?: CobraDialogConfig): Promise<any> {
-    await this.matDialog.open(CobraDialogComponent, {
-      data: {data: config?.data, component: component},
-      height: config?.height,
-      width: config?.width
-    }).afterClosed().toPromise();
-  }
-
-
-  async extendedOpen<T extends CobraComponentBase>(component: ComponentType<T>, config?: CobraDialogConfig): Promise<T> {
+  async open<T extends CobraComponent>(component: ComponentType<T>, config?: CobraDialogConfig): Promise<T> {
     const matDialogRef = this.matDialog.open(CobraDialogComponent, {
       data: {data: config?.data, component: component},
       height: config?.height,

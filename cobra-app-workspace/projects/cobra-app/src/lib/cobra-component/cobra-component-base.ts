@@ -5,17 +5,11 @@ import {CobraComponentMode} from "./cobraComponentMode";
 
 @Injectable()
 export abstract class CobraComponentBase implements CobraComponent, OnInit {
-
   /**
    * Definiert die Action Elemente, die für die Component angezeigt werden sollen
    * @protected
    */
   protected abstract defineActionElements(): Array<CobraElement<any>>;
-
-  /**
-   * Title, der angezeigt werden soll
-   */
-  abstract title: string;
 
   async ngOnInit() {
     // => Action Elemente sammeln

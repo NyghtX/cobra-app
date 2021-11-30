@@ -14,8 +14,6 @@ export * from './lib/cobra-navbar/cobra-navbar-item/cobra-navbar-menu';
 /*
  * Public API Surface of CobraComponent
  */
-export * from './lib/cobra-component/cobra-component.module';
-export * from './lib/cobra-component/cobra-component.component';
 export * from './lib/cobra-component/cobra-component';
 export * from './lib/cobra-component/cobra-component-base';
 
