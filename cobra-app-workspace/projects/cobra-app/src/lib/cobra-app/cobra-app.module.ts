@@ -6,17 +6,19 @@ import {CobraNavbarModule} from "../cobra-navbar/cobra-navbar.module";
 import {CobraAppLoadingModule} from "./cobra-app-loading/cobra-app-loading.module";
 import {CobraNavbarService} from "../cobra-navbar/cobra-navbar.service";
 import {CobraToolbarModule} from "../cobra-toolbar/cobra-toolbar.module";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
     CobraAppComponent
   ],
-    imports: [
-        CommonModule,
-        CobraNavbarModule,
-        CobraAppLoadingModule,
-        CobraToolbarModule,
-    ],
+  imports: [
+    CommonModule,
+    CobraNavbarModule,
+    CobraAppLoadingModule,
+    CobraToolbarModule,
+    RouterModule,
+  ],
   exports: [
     CobraAppComponent
   ]
