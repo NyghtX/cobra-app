@@ -1,0 +1,47 @@
+<div class="cobrawrapper" fxLayout="row" fxLayoutAlign="space-between center">
+
+  <!--      Links-->
+  <div fxFlex="1 1 auto">
+    <ng-container [ngTemplateOutletContext]="{$implicit: leftElements}"
+                  [ngTemplateOutlet]="elementsTemplate"></ng-container>
+  </div>
+
+  <!--      Center-->
+  <div fxFlex="0 1 auto">
+    <ng-container [ngTemplateOutletContext]="{$implicit: centerElements}"
+                  [ngTemplateOutlet]="elementsTemplate"></ng-container>
+  </div>
+
+  <!--      Rechts-->
+  <div fxFlex="0 0 auto">
+    <ng-container [ngTemplateOutletContext]="{$implicit: rightElements}"
+                  [ngTemplateOutlet]="elementsTemplate"></ng-container>
+  </div>
+</div>
+
+
+<ng-template #elementsTemplate let-elements>
+  <ng-container *ngFor="let element of elements">
+    <ng-container [ngSwitch]="element.type">
+      <!--        Button -->
+      <ng-template [ngSwitchCase]="cobraElementType.Button">
+        <!--        Default Button Template-->
+        <button (click)="$any(element).config.cb()"
+                *ngIf="$any(element).config.visible ? $any(element).config.visible() : true"
+                [attr.aria-label]="$any(element).config.ariaLabel"
+                [disabled]="$any(element).config.disabled ? $any(element).config.disabled() : false"
+                [name]="$any(element).config.id"
+                mat-stroked-button>
+          <mat-icon *ngIf="$any(element).config.icon">{{$any(element).config.icon}}</mat-icon>
+          {{$any(element).config.displayName}}
+        </button>
+      </ng-template>
+
+      <!--        Default Template Template-->
+      <ng-template [ngSwitchCase]="cobraElementType.Template">
+        <ng-container [ngTemplateOutlet]="$any(element).config.template"></ng-container>
+      </ng-template>
+    </ng-container>
+
+  </ng-container>
+</ng-template>

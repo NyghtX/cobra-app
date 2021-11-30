@@ -1,0 +1,31 @@
+table {
+  width: 100%;
+}
+table th.action-cell, td.action-cell {
+  overflow: hidden;
+  width: 6rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+:host ::ng-deep a {
+  cursor: pointer;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.87);
+}
+:host ::ng-deep a:hover {
+  text-decoration: underline;
+}
+
+.mat-cell, .mat-header-cell, .mat-footer-cell {
+  padding-right: 0.25rem;
+  padding-left: 0rem;
+}
+
+.mat-cell:first-of-type, .mat-header-cell:first-of-type, .mat-footer-cell:first-of-type {
+  padding-left: 0.25rem;
+}
+
+.mat-cell:last-of-type, .mat-header-cell:last-of-type, .mat-footer-cell:last-of-type {
+  padding-right: 0rem;
+}

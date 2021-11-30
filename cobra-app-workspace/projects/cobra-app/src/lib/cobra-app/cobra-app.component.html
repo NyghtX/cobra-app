@@ -1,0 +1,50 @@
+<!--Application Container-->
+<ng-container [ngTemplateOutlet]="appIsReady ? applicationTemplate : loadingTemplate">
+</ng-container>
+
+<!--Application-->
+<ng-template #applicationTemplate>
+  <!--Navigation-->
+  <nav>
+    <ng-container [ngTemplateOutlet]="navbarTemplateRef || defaultNavbarTemplate"></ng-container>
+  </nav>
+
+  <!--Main Content-->
+  <main>
+    <ng-container [ngTemplateOutlet]="contentTemplateRef || defaultContentTemplate"></ng-container>
+  </main>
+
+  <!--Footer-->
+  <footer>
+    <ng-container [ngTemplateOutlet]="footerTemplateRef || defaultFooterTemplate"></ng-container>
+  </footer>
+
+</ng-template>
+
+<!--Loading-->
+<ng-template #loadingTemplate>
+  <ng-container [ngTemplateOutlet]="loadingTemplateRef || defaultLoadingTemplate">
+  </ng-container>
+</ng-template>
+
+
+<!--    Default Navbar-->
+<ng-template #defaultNavbarTemplate>
+  <cobra-navbar></cobra-navbar>
+</ng-template>
+
+<!--    Default Content-->
+<ng-template #defaultContentTemplate>
+  <ng-content></ng-content>
+</ng-template>
+
+<!--    Default Footer-->
+<ng-template #defaultFooterTemplate>
+  <cobra-toolbar></cobra-toolbar>
+</ng-template>
+
+
+<!--    Default Loading-->
+<ng-template #defaultLoadingTemplate>
+  <cobra-app-loading></cobra-app-loading>
+</ng-template>

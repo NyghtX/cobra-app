@@ -1,0 +1,17 @@
+.loading-container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-content-spinner {
+  display: flex;
+  justify-content: center;
+}
+
+.loading-content-text {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}

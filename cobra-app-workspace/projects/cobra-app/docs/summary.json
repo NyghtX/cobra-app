@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Konzepte",
+    "file": "konzepte/konzepte.md",
+    "children": [
+      {
+        "title": "CobraApp",
+        "file": "konzepte/cobra-app.md"
+      },
+      {
+        "title": "CobraAppLoading",
+        "file": "konzepte/cobra-app-loading.md"
+      }
+    ]
+  }
+]

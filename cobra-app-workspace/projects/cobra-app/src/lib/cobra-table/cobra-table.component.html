@@ -1,0 +1,49 @@
+<!--  Suche-->
+<form #suchForm="ngForm">
+  <div fxLayout="row wrap" fxLayoutGap="2rem">
+
+      <ng-template #sucheContent></ng-template>
+      <ng-container [ngTemplateOutlet]="sucheTemplateRef || sucheContent"></ng-container>
+
+  </div>
+</form>
+
+<!--  Table-->
+<table [dataSource]="tableSource" mat-table matSort matSortActive="{{defaultSortColumnName}}" matSortDirection="{{defaultSortDirection}}" col>
+  <!--    Columns-->
+  <ng-container *ngFor="let col of displayedColumnDefinitions" [matColumnDef]="col.name">
+
+<!--        Header Templates-->
+    <ng-template #sortHeader>
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>{{col.label}}</th>
+    </ng-template>
+    <ng-template #noSortHeader>
+      <th *matHeaderCellDef mat-header-cell>{{col.label}}</th>
+    </ng-template>
+
+<!--        Header-->
+    <ng-container *ngIf="col.sort; then sortHeader; else noSortHeader"></ng-container>
+
+    <td *matCellDef="let element" mat-cell>
+
+      <ng-container [ngTemplateOutlet]="col.template || defaultColumn" [ngTemplateOutletContext]="{ $implicit: element }"></ng-container>
+      <ng-template #defaultColumn>
+        <ng-container *ngIf="col.describeAsync">
+          {{memoize(col, element) | async }}
+        </ng-container>
+        <ng-container *ngIf="col.describe && !col.describeAsync">
+          {{col.describe(element) }}
+        </ng-container>
+      </ng-template>
+
+
+    </td>
+  </ng-container>
+
+
+  <!--    Rows-->
+  <tr *matHeaderRowDef="displayedColumns; sticky:true" mat-header-row></tr>
+  <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+</table>
+<mat-paginator *ngIf="usePaginator" #paginator showFirstLastButtons></mat-paginator>
+

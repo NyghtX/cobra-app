@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <div>
+    <ng-template cobraNavbarItemHost position="Left" #leftContainer>
+
+    </ng-template>
+
+    <cobra-navbar-item *ngFor="let item of getNavbarItems()" [item]="item"></cobra-navbar-item>
+
+  </div>
+  <div class="spacer"></div>
+
+  <div>
+    <ng-template cobraNavbarItemHost position="Right" #rightContainer>
+
+    </ng-template>
+  </div>
+</mat-toolbar>

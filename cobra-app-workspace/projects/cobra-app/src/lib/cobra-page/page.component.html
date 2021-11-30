@@ -1,0 +1,17 @@
+<div class="page-content">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h1 class="cobra-page-title">{{who?.pageTitle}}</h1>
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+
+      <!--      Default Empty Content-->
+      <ng-template #defaultContent></ng-template>
+      <!--      Content, der auf der Page angezeigt wird-->
+      <ng-container [ngTemplateOutlet]="contentTemplateRef || defaultContent"></ng-container>
+    </mat-card-content>
+  </mat-card>
+</div>
