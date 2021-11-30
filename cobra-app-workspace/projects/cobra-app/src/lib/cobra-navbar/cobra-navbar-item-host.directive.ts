@@ -15,7 +15,8 @@ export class CobraNavbarItemHostDirective implements AfterViewInit {
 
   constructor(public viewContainerRef: ViewContainerRef,
               private navbarService: CobraNavbarService,
-              private componentFactoryResolver: ComponentFactoryResolver) { }
+              private componentFactoryResolver: ComponentFactoryResolver) {
+  }
 
 
   ngAfterViewInit(): void {
@@ -28,7 +29,7 @@ export class CobraNavbarItemHostDirective implements AfterViewInit {
     this.viewContainerRef.clear();
 
     // => Validierungen auf Items ausführen
-    if(!items || items?.size < 1)
+    if (!items || items?.size < 1)
       return;
 
     // => Items anzeigen
@@ -36,8 +37,6 @@ export class CobraNavbarItemHostDirective implements AfterViewInit {
       const factory = this.componentFactoryResolver.resolveComponentFactory(item.template);
       this.viewContainerRef.createComponent(factory);
     });
-
-
 
 
   }

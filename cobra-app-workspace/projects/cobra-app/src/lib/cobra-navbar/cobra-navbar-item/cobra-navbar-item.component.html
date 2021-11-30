@@ -1,18 +1,18 @@
 <ng-container [ngSwitch]="item.type">
-  <ng-template [ngSwitchCase]="'menu'" #navbarMenu>
+  <ng-template #navbarMenu [ngSwitchCase]="'menu'">
     <button [matMenuTriggerFor]="menu" class="navbar-menu-button" mat-button>
       {{item.label}}
     </button>
 
     <mat-menu #menu="matMenu">
       <ng-container *ngFor="let subItem of getMenuItems()">
-        <button mat-menu-item [routerLink]="getRouterLink(subItem)">{{subItem.label}}</button>
+        <button [routerLink]="getRouterLink(subItem)" mat-menu-item>{{subItem.label}}</button>
       </ng-container>
     </mat-menu>
   </ng-template>
 
-  <ng-template [ngSwitchCase]="'link'" #navbarLink>
-      <button mat-button [routerLink]="getRouterLink(item)">{{item.label}}</button>
+  <ng-template #navbarLink [ngSwitchCase]="'link'">
+    <button [routerLink]="getRouterLink(item)" mat-button>{{item.label}}</button>
   </ng-template>
 
 </ng-container>

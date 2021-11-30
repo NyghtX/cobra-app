@@ -10,7 +10,7 @@ import {StringService} from "./string.service";
   ],
   providers: [
     StringService,
- ]
+  ]
 })
 export class CobraToolsModule {
 }

@@ -1,4 +1,4 @@
-import { CobraNavbarItemHostDirective } from './cobra-navbar-item-host.directive';
+import {CobraNavbarItemHostDirective} from './cobra-navbar-item-host.directive';
 
 describe('NavbarItemHostDirective', () => {
   it('should create an instance', () => {

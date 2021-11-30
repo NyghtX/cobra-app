@@ -27,8 +27,7 @@ describe('CobraNavbarService', () => {
 
   describe('CobraNavbarService - With Items', () => {
     beforeEach(() => {
-      TestBed.configureTestingModule({
-      });
+      TestBed.configureTestingModule({});
       service = TestBed.inject(CobraNavbarService);
       service.addNavbarItem(new CobraNavbarMenu("Testmenü", "service1", [
         new CobraNavbarLink("Item1", "/link/to", "service1"),
@@ -64,8 +63,7 @@ describe('CobraNavbarService', () => {
 
   describe('CobraNavbarService - With Duplicating Item Labels', () => {
     beforeEach(() => {
-      TestBed.configureTestingModule({
-      });
+      TestBed.configureTestingModule({});
       service = TestBed.inject(CobraNavbarService);
 
       service.addNavbarItem(new CobraNavbarMenu("Testmenü", "service1", [
@@ -100,8 +98,7 @@ describe('CobraNavbarService', () => {
 
   describe('CobraNavbarService - Dynnamic Navbar Items', () => {
     beforeEach(() => {
-      TestBed.configureTestingModule({
-      });
+      TestBed.configureTestingModule({});
       service = TestBed.inject(CobraNavbarService);
 
     });

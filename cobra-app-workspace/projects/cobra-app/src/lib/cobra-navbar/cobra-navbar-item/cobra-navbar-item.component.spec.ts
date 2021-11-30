@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CobraNavbarItemComponent } from './cobra-navbar-item.component';
+import {CobraNavbarItemComponent} from './cobra-navbar-item.component';
 
 describe('CobraNavbarItemComponent', () => {
   let component: CobraNavbarItemComponent;
@@ -12,9 +12,9 @@ describe('CobraNavbarItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CobraNavbarItemComponent ]
+      declarations: [CobraNavbarItemComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

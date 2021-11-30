@@ -1,6 +1,7 @@
 table {
   width: 100%;
 }
+
 table th.action-cell, td.action-cell {
   overflow: hidden;
   width: 6rem;
@@ -13,6 +14,7 @@ table th.action-cell, td.action-cell {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.87);
 }
+
 :host ::ng-deep a:hover {
   text-decoration: underline;
 }

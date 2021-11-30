@@ -6,10 +6,13 @@ import {CobraComponentMode} from "./cobraComponentMode";
 @Injectable()
 export abstract class CobraComponentBase implements CobraComponent, OnInit {
   /**
-   * Definiert die Action Elemente, die für die Component angezeigt werden sollen
-   * @protected
+   * ActionElements, die in der Component angezeigt werden sollen
    */
-  protected abstract defineActionElements(): Array<CobraElement<any>>;
+  public actionElements: Array<CobraElement<any>> = [];
+  /**
+   * Mode, in which the component will be displayed
+   */
+  mode = CobraComponentMode.Plain;
 
   async ngOnInit() {
     // => Action Elemente sammeln
@@ -22,13 +25,9 @@ export abstract class CobraComponentBase implements CobraComponent, OnInit {
   }
 
   /**
-   * ActionElements, die in der Component angezeigt werden sollen
+   * Definiert die Action Elemente, die für die Component angezeigt werden sollen
+   * @protected
    */
-  public actionElements: Array<CobraElement<any>> = [];
-
-  /**
-   * Mode, in which the component will be displayed
-   */
-  mode = CobraComponentMode.Plain;
+  protected abstract defineActionElements(): Array<CobraElement<any>>;
 
 }

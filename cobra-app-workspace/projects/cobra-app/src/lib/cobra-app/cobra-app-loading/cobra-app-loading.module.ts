@@ -15,4 +15,5 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     CobraAppLoadingComponent
   ]
 })
-export class CobraAppLoadingModule { }
+export class CobraAppLoadingModule {
+}

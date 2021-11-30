@@ -21,30 +21,37 @@ export class CobraTableComponent {
 
   @ViewChild(MatSort) sort?: MatSort;
   @ViewChild('paginator') paginator?: MatPaginator;
-
-  constructor(private tableService: CobraTableService) {
-  }
-
   /*
    * Spalte, nach der die Default-Sortierung erfolgen soll.
    */
   @Input()
   defaultSortColumnName?: string;
-
   /*
    * Gibt an, ob die Default-Sortierung aufsteigend (Standard) oder absteigend erfolgen soll.
   */
   @Input()
   defaultSortDirection: SortDirection = 'asc';
-
   /*
  * Soll der Paginator genutzt werden?.
  */
   @Input()
   usePaginator = true;
-
-
+  /**
+   * Columns, die in der Tabelle angezeigt werden
+   */
+  displayedColumns?: Array<string>;
+  /**
+   * Data-Source, die in der Tabelle angezeigt wird
+   */
+  tableSource: MatTableDataSource<any> = new MatTableDataSource<any>();
   private displayedColumnDefinitionsValue: DisplayedColumn<any>[] = [];
+
+  constructor(private tableService: CobraTableService) {
+  }
+
+  get displayedColumnDefinitions() {
+    return this.displayedColumnDefinitionsValue;
+  }
 
   /**
    * Columns, die in der Tabelle angezeigt werden
@@ -60,26 +67,12 @@ export class CobraTableComponent {
     }
   }
 
-  get displayedColumnDefinitions() {
-    return this.displayedColumnDefinitionsValue;
-  }
-
   @Input()
   set tableData(val: Array<any>) {
     this.tableSource.data = val;
     this.tableService.configureSort(this.tableSource, this.sort!);
     this.tableSource.paginator = this.paginator!;
   }
-
-  /**
-   * Columns, die in der Tabelle angezeigt werden
-   */
-  displayedColumns?: Array<string>;
-
-  /**
-   * Data-Source, die in der Tabelle angezeigt wird
-   */
-  tableSource: MatTableDataSource<any> = new MatTableDataSource<any>();
 
   memoize(col: DisplayedColumn<any>, element: any) {
     const anyCol = col as any;

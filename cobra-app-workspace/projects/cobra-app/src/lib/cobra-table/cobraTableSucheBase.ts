@@ -19,18 +19,11 @@ export abstract class CobraTableSucheBase<T> implements AfterViewInit, OnInit {
    */
   searchCount = 0;
 
-  protected abstract defineDisplayedColumns(): Array<DisplayedColumn<T>>;
-
-  /**
-   * Implementierung der Suche
-   * @protected
-   */
-  protected abstract searchImplementation(): Promise<Array<T>>;
   search() {
     this.searchCount++;
     const count = this.searchCount;
     this.searchImplementation().then(value => {
-      if(count !== this.searchCount) {
+      if (count !== this.searchCount) {
         return Promise.reject('overtake');
       } else {
         return Promise.resolve(value);
@@ -38,7 +31,8 @@ export abstract class CobraTableSucheBase<T> implements AfterViewInit, OnInit {
     }).then(value => {
       this.data = value;
       this.searchCount = 0;
-    }).catch(() => {});
+    }).catch(() => {
+    });
   }
 
   async ngAfterViewInit() {
@@ -47,9 +41,16 @@ export abstract class CobraTableSucheBase<T> implements AfterViewInit, OnInit {
     });
   }
 
-
   async ngOnInit() {
     // => Initiale Suche ausführen
     await this.search();
   }
+
+  protected abstract defineDisplayedColumns(): Array<DisplayedColumn<T>>;
+
+  /**
+   * Implementierung der Suche
+   * @protected
+   */
+  protected abstract searchImplementation(): Promise<Array<T>>;
 }

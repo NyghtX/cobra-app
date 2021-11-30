@@ -7,7 +7,7 @@ import {MatMenuModule} from "@angular/material/menu";
 import {RouterModule} from "@angular/router";
 import {MatButtonModule} from "@angular/material/button";
 import {CobraNavbarItemComponent} from './cobra-navbar-item/cobra-navbar-item.component';
-import { CobraNavbarItemHostDirective } from './cobra-navbar-item-host.directive';
+import {CobraNavbarItemHostDirective} from './cobra-navbar-item-host.directive';
 
 
 @NgModule({

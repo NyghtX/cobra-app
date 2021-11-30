@@ -12,6 +12,7 @@ class Test extends CobraComponentBase {
   }
 
 }
+
 describe('CobraComponentBase', () => {
   it('should create an instance', () => {
     const instance = new Test();
