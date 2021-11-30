@@ -11,7 +11,7 @@ export interface CobraComponent {
   mode: CobraComponentMode
 
   /**
-   * Action Elements, die für die CobraComponent angezeigt werden
+   * Action Elements, that the Component uses
    */
   actionElements: Array<CobraElement<any>>;
 }
