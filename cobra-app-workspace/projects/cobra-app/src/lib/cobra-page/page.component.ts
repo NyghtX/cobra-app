@@ -1,29 +1,23 @@
-import {Component, ContentChild, Input, OnInit, TemplateRef} from '@angular/core';
-import {CobraPage} from "./cobraPage";
+import {Component, ContentChild, Input, TemplateRef} from '@angular/core';
+import {CobraComponent} from "../cobra-component/cobra-component";
 
 @Component({
   selector: 'cobra-page',
   templateUrl: './page.component.html',
   styleUrls: ['./page.component.scss']
 })
-export class PageComponent implements OnInit {
+export class PageComponent {
 
   /**
-   * CobraPage, die angezeigt werden soll
+   * CobraComponent to be displayed inside of the page
    */
   @Input()
-  who?: CobraPage;
+  who?: CobraComponent;
 
   /**
-   * Template zum Rendern der Multiplen Optionen
+   * Content Template
    */
   @ContentChild('contentTemplate', {static: false})
   contentTemplateRef?: TemplateRef<any>;
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
 
 }
