@@ -1,7 +1,7 @@
 import {CobraFormBase} from './cobraFormBase';
 import {CobraElement} from '../cobra-elements/cobraElement';
 import {Directive, OnInit} from '@angular/core';
-import {CobraButton} from "../cobra-elements/cobraButton";
+import {CobraButtonDefinition} from "../cobra-elements/cobraButtonDefinition";
 
 // @dynamic
 @Directive()
@@ -79,7 +79,7 @@ export abstract class CobraEditFormBase<TReadModel, TUpdateModel> extends CobraF
 
   protected defineActionElements(): Array<CobraElement<any>> {
     const buttons = [
-      new CobraButton({
+      new CobraButtonDefinition({
         id: 'speichern',
         icon: 'save',
         displayName: 'Speichern',
@@ -90,7 +90,7 @@ export abstract class CobraEditFormBase<TReadModel, TUpdateModel> extends CobraF
 
     // Wurde die "deleteImplementation" überschrieben und damit die löschen Funktion genutzt?
     if (this.deleteImplementation.toString().replace(/\s/g, '') !== 'deleteImplementation(){}') { // replace for PROD optimization
-      buttons.push(new CobraButton({
+      buttons.push(new CobraButtonDefinition({
           id: 'loeschen',
           icon: 'delete',
           displayName: '',

@@ -1,5 +1,5 @@
 import {CobraButtonConfig} from "./cobraButtonConfig";
-import {CobraButtonDefinition} from "./cobraButtonDefinition";
+import {CobraButtonFactory} from "./cobraButtonFactory";
 
 /**
  * Factory function to create a new CobraButton
@@ -7,5 +7,5 @@ import {CobraButtonDefinition} from "./cobraButtonDefinition";
  * @constructor
  */
 export function CobraButton(config?: CobraButtonConfig) {
-  return new CobraButtonDefinition(config || {});
+  return new CobraButtonFactory(config || {});
 }

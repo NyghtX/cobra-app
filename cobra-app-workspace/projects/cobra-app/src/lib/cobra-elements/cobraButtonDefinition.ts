@@ -1,12 +1,6 @@
-import {CobraButtonConfig} from "./cobraButtonConfig";
 import {CobraElementBase} from "./cobraElementBase";
+import {CobraButtonConfig} from "./cobraButtonConfig";
 
-/**
- * Cobra Button Definition
- */
 export class CobraButtonDefinition extends CobraElementBase<CobraButtonConfig> {
-  constructor(config: CobraButtonConfig) {
-    super(config);
-  }
 
 }

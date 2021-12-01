@@ -1,16 +1,12 @@
-import {CobraElement} from "./cobraElement";
-import {DisplayedAtFactory} from "./displayedAtFactory";
 import {CobraElementConfig} from "./cobraElementConfig";
+import {CobraElement} from "./cobraElement";
 
-export abstract class CobraElementBase<TElement extends CobraElement<TConfig>, TConfig extends CobraElementConfig> implements CobraElement<TConfig> {
+/**
+ * Base of CobraElements
+ */
+export class CobraElementBase<TCobraElementConfig extends CobraElementConfig> implements CobraElement<TCobraElementConfig>{
 
-  public config: TConfig;
-
-  constructor(config: TConfig) {
-    this.config = config;
+  constructor(public config: TCobraElementConfig) {
   }
 
-  public displayedAt(): DisplayedAtFactory<TElement, TConfig> {
-    return new DisplayedAtFactory(this as unknown as TElement)
-  }
 }

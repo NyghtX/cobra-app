@@ -1,7 +1,7 @@
 import {CobraFormBase} from './cobraFormBase';
 import {CobraElement} from '../cobra-elements/cobraElement';
 import {Directive, OnInit} from '@angular/core';
-import {CobraButton} from "../cobra-elements/cobraButton";
+import {CobraButtonDefinition} from "../cobra-elements/cobraButtonDefinition";
 
 @Directive()
 export abstract class CobraCreateFormBase extends CobraFormBase implements OnInit {
@@ -43,7 +43,7 @@ export abstract class CobraCreateFormBase extends CobraFormBase implements OnIni
 
   protected defineActionElements(): Array<CobraElement<any>> {
     return [
-      new CobraButton({
+      new CobraButtonDefinition({
         id: 'speichern',
         icon: 'save',
         displayName: 'Speichern',
