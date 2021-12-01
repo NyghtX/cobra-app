@@ -1,7 +1,6 @@
 import {CobraElementPosition} from './cobraElementPosition';
 
-export class CobraElementConfig {
-  id?: string;
+export interface CobraElementConfig {
   position?: CobraElementPosition;
   disabled?: () => boolean;
   visible?: () => boolean;

@@ -1,16 +1,5 @@
-import {CobraElementConfig} from './cobraElementConfig';
-import {CobraElementType} from './cobraElementType';
-import {CobraElementPosition} from './cobraElementPosition';
+import {CobraElementConfig} from "./cobraElementConfig";
 
-export abstract class CobraElement<TElementConfig extends CobraElementConfig> {
-  type: CobraElementType;
-  config: TElementConfig;
-
-  protected constructor(config: TElementConfig, type: CobraElementType) {
-    this.config = config;
-    this.type = type;
-
-    this.config.position = this.config.position || CobraElementPosition.left;
-  }
+export interface CobraElement<TConfig extends CobraElementConfig> {
+  config: TConfig;
 }
-

@@ -37,7 +37,7 @@ export * from './lib/cobra-tools/cobra-tools.module';
  * Public API Surface of CobraElements
  */
 export * from './lib/cobra-elements/cobra-elements.module';
-export * from './lib/cobra-elements/cobraButton';
+export * from './lib/cobra-elements/cobraButtonDefinition';
 export * from './lib/cobra-elements/cobraButtonConfig';
 export * from './lib/cobra-elements/cobraElement';
 export * from './lib/cobra-elements/cobraElementConfig';
@@ -110,3 +110,6 @@ export * from './lib/cobra-table/cobra-table.component';
 export * from './lib/cobra-table/cobraTableSucheBase';
 export * from './lib/cobra-table/displayed.column';
 export * from './lib/cobra-table/cobra-table.service';
+export {CobraButtonConfig} from "./lib/cobra-elements/cobraButtonConfig";
+export {CobraElement} from "./lib/cobra-elements/cobraElement";
+export {CobraButton} from "./lib/cobra-elements/cobraButton";

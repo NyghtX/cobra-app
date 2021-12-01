@@ -1,11 +1,11 @@
-import {CobraElement} from './cobraElement';
-import {CobraButtonConfig} from './cobraButtonConfig';
-import {CobraElementType} from './cobraElementType';
+import {CobraButtonConfig} from "./cobraButtonConfig";
+import {CobraButtonDefinition} from "./cobraButtonDefinition";
 
-export class CobraButton extends CobraElement<CobraButtonConfig> {
-
-  constructor(config: CobraButtonConfig) {
-    super(config, CobraElementType.Button);
-  }
+/**
+ * Factory function to create a new CobraButton
+ * @param config Config for the Button
+ * @constructor
+ */
+export function CobraButton(config?: CobraButtonConfig) {
+  return new CobraButtonDefinition(config || {});
 }
-

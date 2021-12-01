@@ -1,7 +1,7 @@
 import {CobraFormBase} from './cobraFormBase';
 import {CobraElement} from '../cobra-elements/cobraElement';
-import {CobraButton} from '../cobra-elements/cobraButton';
 import {Directive, OnInit} from '@angular/core';
+import {CobraButton} from "../cobra-elements/cobraButton";
 
 @Directive()
 export abstract class CobraCreateFormBase extends CobraFormBase implements OnInit {
