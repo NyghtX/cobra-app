@@ -1,17 +1,13 @@
-<!--<div class="page-content">-->
-<!--  <mat-card>-->
-<!--    <mat-card-header>-->
-<!--      <mat-card-title>-->
-<!--        <h1 class="cobra-page-title">{{who?.pageTitle}}</h1>-->
-<!--      </mat-card-title>-->
-<!--    </mat-card-header>-->
+<div class="page-content">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h1 class="cobra-page-title">{{getComponentDefinition()?.title}}</h1>
+      </mat-card-title>
+    </mat-card-header>
 
-<!--    <mat-card-content>-->
-
-<!--      &lt;!&ndash;      Default Empty Content&ndash;&gt;-->
-<!--      <ng-template #defaultContent></ng-template>-->
-<!--      &lt;!&ndash;      Content, der auf der Page angezeigt wird&ndash;&gt;-->
-<!--      <ng-container [ngTemplateOutlet]="contentTemplateRef || defaultContent"></ng-container>-->
-<!--    </mat-card-content>-->
-<!--  </mat-card>-->
-<!--</div>-->
+    <mat-card-content>
+      <ng-content></ng-content>
+    </mat-card-content>
+  </mat-card>
+</div>

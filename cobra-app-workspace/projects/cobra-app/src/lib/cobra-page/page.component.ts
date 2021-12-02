@@ -20,4 +20,10 @@ export class PageComponent {
   @ContentChild('contentTemplate', {static: false})
   contentTemplateRef?: TemplateRef<any>;
 
+  getComponentDefinition() {
+    if(this.who)
+      return (this.who as any).cobraComponent;
+    return undefined;
+  }
+
 }

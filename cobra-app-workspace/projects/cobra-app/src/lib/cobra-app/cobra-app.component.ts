@@ -1,4 +1,4 @@
-import {Component, ContentChild, OnInit, TemplateRef} from '@angular/core';
+import {Component, ContentChild, TemplateRef} from '@angular/core';
 import {CobraAppLoadingService} from "./cobra-app-loading/cobra-app-loading.service";
 
 @Component({
@@ -6,7 +6,7 @@ import {CobraAppLoadingService} from "./cobra-app-loading/cobra-app-loading.serv
   templateUrl: './cobra-app.component.html',
   styleUrls: ['./cobra-app.component.scss'],
 })
-export class CobraAppComponent implements OnInit {
+export class CobraAppComponent {
   /**
    * Template für die Navbar
    */
@@ -31,6 +31,7 @@ export class CobraAppComponent implements OnInit {
   @ContentChild('footerTemplate', {static: false})
   footerTemplateRef!: TemplateRef<any>;
 
+
   constructor(
     private loadingService: CobraAppLoadingService
   ) {
@@ -41,9 +42,6 @@ export class CobraAppComponent implements OnInit {
    */
   get appIsReady(): boolean {
     return this.loadingService.ready;
-  }
-
-  ngOnInit(): void {
   }
 
 

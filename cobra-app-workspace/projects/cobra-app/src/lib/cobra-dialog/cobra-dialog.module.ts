@@ -6,7 +6,6 @@ import {CobraDialogContentDirective} from "./cobra-dialog-content.directive";
 import {CobraElementsModule} from "../cobra-elements/cobra-elements.module";
 import {MatCardModule} from "@angular/material/card";
 import {MatDialogModule} from "@angular/material/dialog";
-import {CobraFormModule} from "../cobra-form/cobra-form.module";
 
 
 @NgModule({
@@ -18,7 +17,6 @@ import {CobraFormModule} from "../cobra-form/cobra-form.module";
     CobraElementsModule,
     MatCardModule,
     MatDialogModule,
-    CobraFormModule,
   ],
   providers: [
     CobraDialogService

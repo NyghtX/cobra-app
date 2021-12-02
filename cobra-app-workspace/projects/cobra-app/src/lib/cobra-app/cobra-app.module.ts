@@ -7,10 +7,15 @@ import {CobraAppLoadingModule} from "./cobra-app-loading/cobra-app-loading.modul
 import {CobraNavbarService} from "../cobra-navbar/cobra-navbar.service";
 import {CobraToolbarModule} from "../cobra-toolbar/cobra-toolbar.module";
 import {RouterModule} from "@angular/router";
+import { CobraAppRouterOutletComponent } from './cobra-app-router-outlet/cobra-app-router-outlet.component';
+import {CobraPageModule} from "../cobra-page/cobra-page.module";
+import { CobraAppContentComponent } from './cobra-app-content/cobra-app-content.component';
 
 @NgModule({
   declarations: [
-    CobraAppComponent
+    CobraAppComponent,
+    CobraAppRouterOutletComponent,
+    CobraAppContentComponent
   ],
   imports: [
     CommonModule,
@@ -18,6 +23,7 @@ import {RouterModule} from "@angular/router";
     CobraAppLoadingModule,
     CobraToolbarModule,
     RouterModule,
+    CobraPageModule,
   ],
   exports: [
     CobraAppComponent

@@ -1,7 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {CobraElementPosition} from '../cobraElementPosition';
 import {CobraElement} from '../cobraElement';
-import {CobraElementType} from '../cobraElementType';
 
 @Component({
   selector: 'cobra-elements-container',
@@ -9,7 +8,6 @@ import {CobraElementType} from '../cobraElementType';
   styleUrls: ['./cobra-elements-container.component.scss']
 })
 export class CobraElementsContainerComponent {
-  cobraElementType = CobraElementType;
   private elementsValue: Array<CobraElement<any>> = [];
 
   get elements() {
@@ -37,4 +35,8 @@ export class CobraElementsContainerComponent {
     return this.elements.filter(x => x.config.position === CobraElementPosition.center);
   }
 
+  getElementType(element: any) {
+    return 'button';
+
+  }
 }
