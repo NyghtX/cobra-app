@@ -1,5 +1,4 @@
 {
   "$schema": "../../node_modules/@compodoc/compodoc/src/config/schema.json",
-  "includes": "projects/cobra-app/docs",
-  "includesName": "Dokumentation"
+  "includesName": "Documentation"
 }
