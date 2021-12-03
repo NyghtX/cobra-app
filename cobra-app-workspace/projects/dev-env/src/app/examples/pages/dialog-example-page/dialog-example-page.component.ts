@@ -7,7 +7,7 @@ import {CobraButton} from "../../../../../../cobra-app/src/lib/cobra-elements/co
 @CobraComponent({
   title: "Examples - Dialog",
   actionElements: [
-    CobraButton("Dialog öffnen")
+    CobraButton("Open Dialog")
       .displayedAt().theRight()
       .thatCalls(ctx => ctx.open())
   ]
@@ -18,13 +18,13 @@ import {CobraButton} from "../../../../../../cobra-app/src/lib/cobra-elements/co
   styleUrls: ['./dialog-example-page.component.scss']
 })
 export class DialogExamplePageComponent {
-
-  dialogText = "I'm the dialog.";
-
   constructor(
     private dialog: CobraDialogService
   ) { }
 
+  /**
+   * Opens the dialog
+   */
   async open() {
     await this.dialog.open(DialogExampleComponent);
   }
