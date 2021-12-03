@@ -1,4 +1,9 @@
 /*
+ * Public API Surface of CobraApp
+ */
+export * from './lib/cobra-app/exports';
+
+/*
  * Public API Surface of CobraNavbar
  */
 export * from './lib/cobra-navbar/cobra-navbar.module';
@@ -22,8 +27,6 @@ export * from './lib/cobra-component/cobra-component-base';
  * Public API Surface of CobraPage
  */
 export * from './lib/cobra-page/page.component';
-export * from './lib/cobra-page/cobraPage';
-export * from './lib/cobra-page/cobraPageBase';
 export * from './lib/cobra-page/cobra-page.module';
 
 /*
@@ -36,25 +39,7 @@ export * from './lib/cobra-tools/cobra-tools.module';
 /*
  * Public API Surface of CobraElements
  */
-export * from './lib/cobra-elements/cobra-elements.module';
-export * from './lib/cobra-elements/cobraButtonDefinition';
-export * from './lib/cobra-elements/cobraButtonConfig';
-export * from './lib/cobra-elements/cobraElement';
-export * from './lib/cobra-elements/cobraElementConfig';
-export * from './lib/cobra-elements/cobraElementPosition';
-export * from './lib/cobra-elements/cobraElementType';
-export * from './lib/cobra-elements/cobraTemplateRef';
-export * from './lib/cobra-elements/cobraTemplateRefConfig';
-export * from './lib/cobra-elements/cobra-elements-container/cobra-elements-container.component';
-
-/*
- * Public API Surface of CobraForm
- */
-export * from './lib/cobra-form/cobra-form.module';
-export * from './lib/cobra-form/cobra-form.component';
-export * from './lib/cobra-form/cobraCreateFormBase';
-export * from './lib/cobra-form/cobraEditFormBase';
-export * from './lib/cobra-form/cobraFormBase';
+export * from './lib/cobra-elements/exports';
 
 
 /*
@@ -88,19 +73,7 @@ export * from './lib/cobra-toolbar/cobra-toolbar.module';
 export * from './lib/cobra-toolbar/cobra-toolbar.component';
 export * from './lib/cobra-toolbar/cobra-toolbar.service';
 
-/*
- * Public API Surface of CobraApp
- */
-export * from './lib/cobra-app/cobra-app.module';
-export * from './lib/cobra-app/cobra-app.component';
-export * from './lib/cobra-app/cobra-app-definition';
-export * from './lib/cobra-app/cobra-app.configuration';
 
-export * from './lib/cobra-app/cobra-app-loading/cobra-app-loading.module';
-export * from './lib/cobra-app/cobra-app-loading/cobra-app-loading.component';
-export * from './lib/cobra-app/cobra-app-loading/cobra-app-loading.service';
-export * from './lib/cobra-app/cobra-app-loading/cobra-app-loading-indicator';
-export * from './lib/cobra-app/cobra-app-loading/cobra-app-part-loading-state';
 
 /*
  * Public API Surface of CobraTable
@@ -110,6 +83,3 @@ export * from './lib/cobra-table/cobra-table.component';
 export * from './lib/cobra-table/cobraTableSucheBase';
 export * from './lib/cobra-table/displayed.column';
 export * from './lib/cobra-table/cobra-table.service';
-export {CobraButtonConfig} from "./lib/cobra-elements/cobraButtonConfig";
-export {CobraElement} from "./lib/cobra-elements/cobraElement";
-export {CobraButton} from "./lib/cobra-elements/cobraButton";
