@@ -26,15 +26,7 @@
       <!--        Button -->
       <ng-template [ngSwitchCase]="'button'">
         <!--        Default Button Template-->
-        <button (click)="$any(element).config.cb()"
-                *ngIf="$any(element).config.visible ? $any(element).config.visible() : true"
-                [attr.aria-label]="$any(element).config.ariaLabel"
-                [disabled]="$any(element).config.disabled ? $any(element).config.disabled() : false"
-                [name]="$any(element).config.id"
-                mat-stroked-button>
-          <mat-icon *ngIf="$any(element).config.icon">{{$any(element).config.icon}}</mat-icon>
-          {{$any(element).config.displayName}}
-        </button>
+        <cobra-button [element]="element"></cobra-button>
       </ng-template>
 
       <!--        Default Template Template-->

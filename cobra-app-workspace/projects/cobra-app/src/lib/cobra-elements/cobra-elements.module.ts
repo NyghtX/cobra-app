@@ -4,10 +4,11 @@ import {CobraElementsContainerComponent} from "./cobra-elements-container/cobra-
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {FlexModule} from "@angular/flex-layout";
+import { CobraButtonComponent } from './cobra-button/cobra-button.component';
 
 
 @NgModule({
-  declarations: [CobraElementsContainerComponent],
+  declarations: [CobraElementsContainerComponent, CobraButtonComponent],
   imports: [
     CommonModule,
     MatIconModule,

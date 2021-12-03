@@ -1,0 +1,9 @@
+<button (click)="onClick()"
+        *ngIf="$any(element).config.visible ? $any(element).config.visible() : true"
+        [attr.aria-label]="$any(element).config.ariaLabel"
+        [disabled]="$any(element).config.disabled ? $any(element).config.disabled() : false"
+        [name]="$any(element).config.id"
+        mat-stroked-button>
+  <mat-icon *ngIf="$any(element).config.icon">{{$any(element).config.icon}}</mat-icon>
+  {{$any(element).config.label}}
+</button>

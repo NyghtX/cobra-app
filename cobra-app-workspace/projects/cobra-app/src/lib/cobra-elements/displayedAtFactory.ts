@@ -1,18 +1,19 @@
 import {CobraElement} from "./cobraElement";
 import {CobraElementConfig} from "./cobraElementConfig";
 import {CobraElementPosition} from "./cobraElementPosition";
+import {CobraElementFactory} from "./cobraElementFactory";
 
 /**
  * Factory to set the position of a CobraElement
  */
-export class DisplayedAtFactory<TElement extends CobraElement<TConfig>, TConfig extends CobraElementConfig> {
-  constructor(private element: TElement) {
+export class DisplayedAtFactory<TElement extends CobraElement<TConfig>, TConfig extends CobraElementConfig, TFactory extends CobraElementFactory<TElement, TConfig>> {
+  constructor(private element: TFactory) {
   }
 
   /**
    * Displays the element at the right
    */
-  theRight() {
+  theRight(): TFactory {
     this.element.config.position = CobraElementPosition.right;
     return this.element;
   }
@@ -20,7 +21,7 @@ export class DisplayedAtFactory<TElement extends CobraElement<TConfig>, TConfig 
   /**
    * Displays the element at the left
    */
-  theLeft() {
+  theLeft(): TFactory {
     this.element.config.position = CobraElementPosition.left;
     return this.element;
   }
@@ -28,7 +29,7 @@ export class DisplayedAtFactory<TElement extends CobraElement<TConfig>, TConfig 
   /**
    * Displays the element at the center
    */
-  theCenter() {
+  theCenter(): TFactory {
     this.element.config.position = CobraElementPosition.center;
     return this.element;
   }

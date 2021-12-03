@@ -4,4 +4,5 @@ export interface CobraElementConfig {
   position?: CobraElementPosition;
   disabled?: () => boolean;
   visible?: () => boolean;
+  context?: any;
 }
