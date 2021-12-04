@@ -33,3 +33,6 @@ jobs:
 
       - run: npm install
         working-directory: ./cobra-app-workspace
+
+      - run: npm version $GITVERSION_SEMVER       
+        working-directory: ./cobra-app-workspace/projects/cobra-app
