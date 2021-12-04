@@ -1,5 +1,5 @@
 {
-  "name": "@cobra/app",
+  "name": "@angular/cobra-app",
   "version": "0.0.11",
   "peerDependencies": {
     "@angular/common": "~13.0.3",
