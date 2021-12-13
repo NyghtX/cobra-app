@@ -38,8 +38,3 @@ jobs:
 
       - run: npm version $GITVERSION_SEMVER       
         working-directory: ./cobra-app-workspace/projects/cobra-app
-
-      - run: npm publish --access public
-        working-directory: ./cobra-app-workspace/projects/cobra-app
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
