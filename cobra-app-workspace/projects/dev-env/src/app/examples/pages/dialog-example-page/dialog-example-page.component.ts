@@ -10,6 +10,8 @@ import {CobraButton} from "../../../../../../cobra-app/src/lib/cobra-elements/co
     CobraButton("Open Dialog")
       .displayedAt().theRight()
       .thatCalls(ctx => ctx.open())
+      .addCss('color: red;')
+      .addCss('margin: 100px;')
   ]
 })
 @Component({

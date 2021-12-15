@@ -21,6 +21,18 @@ export abstract class CobraElementFactoryBase<
     this.config = config;
   }
 
+  /**
+   * Adds custom css on the element
+   * @param css Custom css string
+   */
+  public addCss(css: string) {
+    this.config.styles = `${css}${this.config.styles}`;
+    return this;
+  }
+
+  /**
+   * Creates a factory to set the position of the element
+   */
   public displayedAt(): DisplayedAtFactory<TElement, TConfig, TFactory> {
     return new DisplayedAtFactory(this as unknown as TFactory)
   }
