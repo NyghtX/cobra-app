@@ -2,6 +2,7 @@ import {CobraElementFactoryBase} from "./cobraElementFactoryBase";
 import {DisplayedAtFactory} from "./displayedAtFactory";
 import {CobraElementConfig} from "./cobraElementConfig";
 import {CobraElementPosition} from "./cobraElementPosition";
+import {CobraElementBase} from "./cobraElementBase";
 
 describe("CobraElementFactoryBase", () => {
 
@@ -43,6 +44,33 @@ describe("CobraElementFactoryBase", () => {
     });
   });
 
+  describe("addCss", () => {
+    it("should return the correct type", () => {
+      const sut = TestElement({})
+        .addCss("")
+      expect(sut).toBeInstanceOf(TestElementFactory);
+
+    });
+
+    it("should add the css config", () => {
+      const sut = TestElement({})
+        .addCss("height: 10px;");
+      expect(sut).toBeInstanceOf(TestElementFactory);
+      expect(sut.config.styles).toEqual("height: 10px;");
+    });
+
+    it("should concat multiple css configs", () => {
+      const sut = TestElement({})
+        .addCss("height: 10px;")
+        .addCss("width: 12px;");
+      expect(sut).toBeInstanceOf(TestElementFactory);
+      expect(sut.config.styles).toEqual("width: 12px;height: 10px;");
+    });
+
+
+
+  });
+
 });
 
 function TestElement(config?: TestElementConfig) {
@@ -51,7 +79,11 @@ function TestElement(config?: TestElementConfig) {
 interface TestElementConfig extends CobraElementConfig {
 }
 
-class TestElementFactory extends CobraElementFactoryBase<TestElementFactory, TestElementConfig> {
+class TestElementDefinition extends CobraElementBase<TestElementConfig> {
+
+}
+
+class TestElementFactory extends CobraElementFactoryBase<TestElementDefinition, TestElementConfig, TestElementFactory> {
   constructor(config: TestElementConfig) {
     super(config, TestElementFactory);
   }

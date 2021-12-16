@@ -26,7 +26,7 @@ export abstract class CobraElementFactoryBase<
    * @param css Custom css string
    */
   public addCss(css: string) {
-    this.config.styles = `${css}${this.config.styles}`;
+    this.config.styles = `${css}${this.config.styles ? this.config.styles : ''}`;
     return this;
   }
 
